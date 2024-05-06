@@ -37,16 +37,16 @@ Start the server
     ```
   
     ### b.  Get all users
-    ###   GET Request : http://127.0.0.1:5000/users
+    ###   GET Request: http://127.0.0.1:5000/users
     Open Postman select HTTP request, Send the request, it will display all users.
 
     ### c.  Get a User based on ID
-    ###   GET Request : http://127.0.0.1:5000/users/{id}
+    ###   GET Request: http://127.0.0.1:5000/users/{id}
     Open Postman select HTTP request, Send the request with the id of the user you want to search.
     
     
     ###  d. Update Username based on ID
-    ###   PUT Request http://127.0.0.1:5000/users/{id} 
+    ###   PUT Request: http://127.0.0.1:5000/users/{id} 
     Open Postman select HTTP request, Send the request with the id of the user you want to update.
     In raw json send data like this.
      ```bash
@@ -57,6 +57,6 @@ Start the server
     }
     ```
     ### e.  Delete a User based on ID
-    ###   DELETE Request http://127.0.0.1:5000/users/{id} 
+    ###   DELETE Request: http://127.0.0.1:5000/users/{id} 
     Open Postman select HTTP request, Send the request with the id of the user you want to delete.
 
