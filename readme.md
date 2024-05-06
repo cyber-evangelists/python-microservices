@@ -4,7 +4,7 @@
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/cyber-evangelists/python-microservices
 ```
 
 Open in vs code terminal
