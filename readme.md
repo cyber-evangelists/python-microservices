@@ -45,7 +45,7 @@ Start the server
     Open Postman select HTTP request, Send the request with the id of the user you want to search.
     
     
-    ###  d. Update Username based on ID
+    ###  d. Update User based on ID
     ###   PUT Request: http://127.0.0.1:5000/users/{id} 
     Open Postman select HTTP request, Send the request with the id of the user you want to update.
     In raw json send data like this.
