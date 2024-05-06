@@ -25,7 +25,7 @@ Start the server
 
 2. Endpoints on local host would be:-
 
-    ###   Add a new User
+    ###  a. Add a new User
     ###   POST Request: http://127.0.0.1:5000/users 
     Open Postman select HTTP request, Open Body tab select raw json, insert data like this and send the request
    ```bash
@@ -36,16 +36,16 @@ Start the server
     }
     ```
   
-    ###   Get all users
+    ### b.  Get all users
     ###   GET Request : http://127.0.0.1:5000/users
     Open Postman select HTTP request, Send the request, it will display all users.
 
-    ###   Get a User based on ID
+    ### c.  Get a User based on ID
     ###   GET Request : http://127.0.0.1:5000/users/{id}
     Open Postman select HTTP request, Send the request with the id of the user you want to search.
     
     
-    ###   Update Username based on ID
+    ###  d. Update Username based on ID
     ###   PUT Request http://127.0.0.1:5000/users/{id} 
     Open Postman select HTTP request, Send the request with the id of the user you want to update.
     In raw json send data like this.
@@ -56,7 +56,7 @@ Start the server
     "email": "test@example.com"
     }
     ```
-    ###   Delete a User based on ID
+    ### e.  Delete a User based on ID
     ###   DELETE Request http://127.0.0.1:5000/users/{id} 
     Open Postman select HTTP request, Send the request with the id of the user you want to delete.
 
