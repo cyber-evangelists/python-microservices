@@ -2,3 +2,4 @@ Flask
 flask-restful
 SQLAlchemy
 pysqlite3
+grpcio-tools
