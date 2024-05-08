@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuser.proto\x12\x05users\"0\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"%\n\x12\x43reateUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x14\n\x12GetAllUsersRequest\"/\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"1\n\x13GetAllUsersResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.users.User\"!\n\x0eGetUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\"=\n\x0fGetUserResponse\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\x12\x0f\n\x07message\x18\x02 \x01(\t\"A\n\x11UpdateUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"%\n\x12UpdateUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"$\n\x11\x44\x65leteUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\"%\n\x12\x44\x65leteUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x07\n\x05\x45mpty2\xd6\x02\n\x0bUserService\x12\x41\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x19.users.CreateUserResponse\x12\x44\n\x0bGetAllUsers\x12\x19.users.GetAllUsersRequest\x1a\x1a.users.GetAllUsersResponse\x12\x38\n\x07GetUser\x12\x15.users.GetUserRequest\x1a\x16.users.GetUserResponse\x12\x41\n\nUpdateUser\x12\x18.users.UpdateUserRequest\x1a\x19.users.UpdateUserResponse\x12\x41\n\nDeleteUser\x12\x18.users.DeleteUserRequest\x1a\x19.users.DeleteUserResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuser.proto\x12\x05users\"0\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"%\n\x12\x43reateUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x14\n\x12GetAllUsersRequest\"/\n\x04User\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"1\n\x13GetAllUsersResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.users.User\"!\n\x0eGetUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\"=\n\x0fGetUserResponse\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.users.User\x12\x0f\n\x07message\x18\x02 \x01(\t\"A\n\x11UpdateUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"%\n\x12UpdateUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"$\n\x11\x44\x65leteUserRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\x05\"%\n\x12\x44\x65leteUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"/\n\x10LoginUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"3\n\x11LoginUserResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x07\n\x05\x45mpty2\x96\x03\n\x0bUserService\x12\x41\n\nCreateUser\x12\x18.users.CreateUserRequest\x1a\x19.users.CreateUserResponse\x12\x44\n\x0bGetAllUsers\x12\x19.users.GetAllUsersRequest\x1a\x1a.users.GetAllUsersResponse\x12\x38\n\x07GetUser\x12\x15.users.GetUserRequest\x1a\x16.users.GetUserResponse\x12\x41\n\nUpdateUser\x12\x18.users.UpdateUserRequest\x1a\x19.users.UpdateUserResponse\x12\x41\n\nDeleteUser\x12\x18.users.DeleteUserRequest\x1a\x19.users.DeleteUserResponse\x12>\n\tLoginUser\x12\x17.users.LoginUserRequest\x1a\x18.users.LoginUserResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,8 +43,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEUSERREQUEST']._serialized_end=472
   _globals['_DELETEUSERRESPONSE']._serialized_start=474
   _globals['_DELETEUSERRESPONSE']._serialized_end=511
-  _globals['_EMPTY']._serialized_start=513
-  _globals['_EMPTY']._serialized_end=520
-  _globals['_USERSERVICE']._serialized_start=523
-  _globals['_USERSERVICE']._serialized_end=865
+  _globals['_LOGINUSERREQUEST']._serialized_start=513
+  _globals['_LOGINUSERREQUEST']._serialized_end=560
+  _globals['_LOGINUSERRESPONSE']._serialized_start=562
+  _globals['_LOGINUSERRESPONSE']._serialized_end=613
+  _globals['_EMPTY']._serialized_start=615
+  _globals['_EMPTY']._serialized_end=622
+  _globals['_USERSERVICE']._serialized_start=625
+  _globals['_USERSERVICE']._serialized_end=1031
 # @@protoc_insertion_point(module_scope)

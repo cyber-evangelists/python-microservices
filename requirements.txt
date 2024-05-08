@@ -3,3 +3,5 @@ flask-restful
 SQLAlchemy
 pysqlite3
 grpcio-tools
+python-decouple
+jwt

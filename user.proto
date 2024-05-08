@@ -8,6 +8,7 @@ service UserService {
     rpc GetUser(GetUserRequest) returns (GetUserResponse);
     rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
     rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc LoginUser(LoginUserRequest) returns (LoginUserResponse); // New method for user login
 }
 
 message CreateUserRequest {
@@ -58,5 +59,14 @@ message DeleteUserResponse {
     string message = 1;
 }
 
+message LoginUserRequest {
+    string name = 1;
+    string email = 2;
+}
+
+message LoginUserResponse {
+    string token = 1;
+    string message = 2;
+}
 
 message Empty {}
