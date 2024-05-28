@@ -18,9 +18,9 @@ def LoginUser(name, email):
 def InsertUser():
     channel = grpc.insecure_channel('localhost:50051')
     stub = user_pb2_grpc.UserServiceStub(channel)
-    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUxODU1MzEuNzUxMTg5fQ.QpvtYjDMQ15KxABKixuIe0k3l3TAdg3GEEep3ofAvpQ"
+    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTU5NjA1MzkuNTcxNDIyfQ.pGBmI1RK0pXbgFiGnJnx7QS3LGg5Z7iiBnU6JmOwns8"
     metadata = [('authorization', f'Bearer {jwt_token}')]
-    request = user_pb2.CreateUserRequest(name='User20', email='user20@example.com')
+    request = user_pb2.CreateUserRequest(name='User23', email='user23@example.com')
     response = stub.CreateUser(request, metadata=metadata)
     print(response)
 
@@ -29,7 +29,7 @@ def InsertUser():
 def GetAllUser():
     channel = grpc.insecure_channel('localhost:50051')
     stub = user_pb2_grpc.UserServiceStub(channel)
-    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUxODU1MzEuNzUxMTg5fQ.QpvtYjDMQ15KxABKixuIe0k3l3TAdg3GEEep3ofAvpQ"
+    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUyNTUyODUuNjg5MjQ1fQ.X1SCn6BGFflBb37vElDPJV1fs2-2xpH5KsHzxgmZRNo"
     
     # Set JWT token in the request metadata
     metadata = [('authorization', f'Bearer {jwt_token}')]
@@ -46,7 +46,7 @@ def GetAllUser():
 def GetUserByID(user_id):
     channel = grpc.insecure_channel('localhost:50051')
     stub = user_pb2_grpc.UserServiceStub(channel)
-    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUxODU1MzEuNzUxMTg5fQ.QpvtYjDMQ15KxABKixuIe0k3l3TAdg3GEEep3ofAvpQ"
+    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUyNTUyODUuNjg5MjQ1fQ.X1SCn6BGFflBb37vElDPJV1fs2-2xpH5KsHzxgmZRNo"
     
     # Set JWT token in the request metadata
     metadata = [('authorization', f'Bearer {jwt_token}')]
@@ -62,7 +62,7 @@ def GetUserByID(user_id):
 def UpdateUserByID(user_id, new_name, new_email):
     channel = grpc.insecure_channel('localhost:50051')
     stub = user_pb2_grpc.UserServiceStub(channel)
-    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUxODU1MzEuNzUxMTg5fQ.QpvtYjDMQ15KxABKixuIe0k3l3TAdg3GEEep3ofAvpQ"
+    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUyNTUyODUuNjg5MjQ1fQ.X1SCn6BGFflBb37vElDPJV1fs2-2xpH5KsHzxgmZRNo"
     
     # Set JWT token in the request metadata
     metadata = [('authorization', f'Bearer {jwt_token}')]
@@ -76,9 +76,9 @@ def UpdateUserByID(user_id, new_name, new_email):
 def DeleteUserByID(user_id):
     channel = grpc.insecure_channel('localhost:50051')
     stub = user_pb2_grpc.UserServiceStub(channel)
-    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUxODU1MzEuNzUxMTg5fQ.QpvtYjDMQ15KxABKixuIe0k3l3TAdg3GEEep3ofAvpQ"
-    
-    # Set JWT token in the request metadata
+    jwt_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiVGVzdCIsImV4cGlyZXMiOjE3MTUyNTUyODUuNjg5MjQ1fQ.X1SCn6BGFflBb37vElDPJV1fs2-2xpH5KsHzxgmZRNo"
+ 
+   
     metadata = [('authorization', f'Bearer {jwt_token}')]
     
     try:
@@ -89,9 +89,9 @@ def DeleteUserByID(user_id):
         print(f"Error occurred: {e.details()}")
 
 if __name__ == '__main__':
-    # InsertUser()
+    InsertUser()
     # GetAllUser()
     # GetUserByID(12)
     # LoginUser(name="Test", email="test@example.com")
-    # UpdateUserByID(user_id=2, new_name="New Name", new_email="newemail@example.com")
-    DeleteUserByID(user_id=12)
+    # UpdateUserByID(user_id=20, new_name="New Name", new_email="newemail@example.com")
+    # DeleteUserByID(user_id=13)

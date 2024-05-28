@@ -1,3 +1,6 @@
+## Diagram
+
+![Logo](/Mind%20Map.jpg)
 
 ## Run Locally
 

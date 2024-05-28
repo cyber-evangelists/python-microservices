@@ -12,6 +12,8 @@ DBSession = sessionmaker(bind=engine)
 Base.metadata.create_all(engine)
 from auth.auth_handler import signJWT,decodeJWT
 import jwt
+
+
 class UserService(user_pb2_grpc.UserServiceServicer):
     def __init__(self):
         self.Session = sessionmaker(bind=engine)
@@ -40,7 +42,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                 return user_pb2.LoginUserResponse(message='Invalid email or password')
         except Exception as e:
             session.rollback()
-            raise
+            return user_pb2.LoginUserResponse(message='User Login unsucessful')
         finally:
             session.close()
 
@@ -97,7 +99,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                     return user_pb2.GetAllUsersResponse(message="Invalid or expired jwt")
             except Exception as e:
                 session.rollback()
-                raise
+                return user_pb2.GetAllUsersResponse(message='Users cannot be retrieved')
             finally:
                 session.close()
 
@@ -110,7 +112,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                 decoded_token, is_expired = decodeJWT(token)
                 if decoded_token:
                     if not request.user_id:
-                        return user_pb2.UpdateUserResponse(message=f"User ID is required")
+                        return user_pb2.GetUserResponse(message=f"User ID is required")
                     uid = request.user_id
                 
                     
@@ -126,7 +128,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                      return user_pb2.GetUserResponse(message=f"Invalid or expired JWT")
             except Exception as e:
                 session.rollback()
-                raise
+                return user_pb2.GetUserResponse(message='User could not be found')
             finally:
                 session.close()
     
@@ -161,7 +163,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                      return user_pb2.UpdateUserResponse(message=f"Invalid or Expired JWT")
             except Exception as e:
                 session.rollback()
-                raise
+                return user_pb2.UpdateUserResponse(message='User could not be updated')
             finally:
                 session.close()
     def DeleteUser(self, request, context):
@@ -172,9 +174,10 @@ class UserService(user_pb2_grpc.UserServiceServicer):
             try:
                 decoded_token, is_expired = decodeJWT(token)
                 if decoded_token:
-                    if not user_id:
+                    if not request.user_id:
                         return user_pb2.UpdateUserResponse(message=f"User ID is required")
                     user_id = request.user_id
+                    print(user_id)
                 
                     
                 
@@ -191,7 +194,7 @@ class UserService(user_pb2_grpc.UserServiceServicer):
                     return user_pb2.DeleteUserResponse(message=f"Invalid or expired jwt")
             except Exception as e:
                 session.rollback()
-                raise
+                return user_pb2.DeleteUserResponse(message='User could not be deleted')
             finally:
                 session.close()
 
