@@ -2,3 +2,4 @@ __pycache__
 micro_crud
 users.db
 proto.txt
+.env
